@@ -1,0 +1,13 @@
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\bin\Debug\lecteur.exe.config
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\bin\Debug\lecteur.exe
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\bin\Debug\lecteur.pdb
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.csprojResolveAssemblyReference.cache
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\MainWindow.baml
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\MainWindow.g.cs
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\App.g.cs
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur_MarkupCompile.cache
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.g.resources
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.Properties.Resources.resources
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.csproj.GenerateResource.Cache
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.exe
+c:\users\guillaume\documents\visual studio 2013\Projects\lecteur\lecteur\obj\Debug\lecteur.pdb
