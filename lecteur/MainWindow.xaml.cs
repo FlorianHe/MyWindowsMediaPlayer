@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Windows.Forms;
 
 namespace lecteur
 {
@@ -22,6 +23,7 @@ namespace lecteur
     public partial class MainWindow : Window
     {
         DispatcherTimer timer;
+        OpenFileDialog ofd = new OpenFileDialog();
 
         public MainWindow()
         {
@@ -39,16 +41,19 @@ namespace lecteur
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            mediaElement1.Play();
+            if (mediaElement1.Source != null)
+                mediaElement1.Play();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (mediaElement1.Source != null)
             mediaElement1.Pause();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            if (mediaElement1.Source != null)
             mediaElement1.Stop();
         }
 
@@ -62,9 +67,9 @@ namespace lecteur
             mediaElement1.Position = TimeSpan.FromSeconds(slider_seek.Value);
         }
 
-        private void Window_Drop(object sender, DragEventArgs e)
+        private void Window_Drop(object sender, System.Windows.DragEventArgs e)
         {
-            string filename = (string)((DataObject)e.Data).GetFileDropList()[0];
+            string filename = (string)((System.Windows.DataObject)e.Data).GetFileDropList()[0];
             mediaElement1.Source = new Uri(filename);
 
             mediaElement1.LoadedBehavior = MediaState.Manual;
@@ -80,6 +85,18 @@ namespace lecteur
             slider_seek.Maximum = ts.TotalSeconds;
             timer.Start();
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                mediaElement1.Source = new Uri(ofd.FileName);
+                mediaElement1.LoadedBehavior = MediaState.Manual;
+                mediaElement1.UnloadedBehavior = MediaState.Manual;
+                mediaElement1.Play();
+            }
         }
     }
 }
