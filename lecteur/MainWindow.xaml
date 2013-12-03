@@ -8,13 +8,24 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="55*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement x:Name="mediaElement1" Margin="5,10,5.4,85.4" Grid.ColumnSpan="3" MediaOpened="mediaElement1_MediaOpened"/>
+        <MediaElement x:Name="mediaElement1" Margin="0,35,5.6,85.8" Grid.ColumnSpan="3" MediaOpened="mediaElement1_MediaOpened"/>
         <Button Content="Play" Margin="26,0,0,34.8" VerticalAlignment="Bottom" Click="Button_Click" HorizontalAlignment="Left" Width="75"/>
         <Button Content="Stop" Margin="218,0,0,34.8" Click="Button_Click_2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
         <Slider Margin="10,0,10,9.8" Name="slider_seek" Grid.ColumnSpan="3" ValueChanged="slider_seek_ValueChanged" RenderTransformOrigin="0.498,0.777" Height="20" VerticalAlignment="Bottom"/>
         <Slider Margin="0,0,36.4,34.8" Name="slider_vol" Maximum="1" Grid.Column="1" Value="1" ValueChanged="slider_vol_ValueChanged" Grid.ColumnSpan="2" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94"/>
         <Button Content="Pause" Margin="119,0,0,34.8" Click="Button_Click_1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="441,418,0,0" VerticalAlignment="Top" Width="44" Click="Button_Click_3"/>
 
+        <Menu VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
+            <MenuItem Header="File" Click="MenuItem_Click">
+                <MenuItem Header="Ouvrir" Name="Open"/>
+                <MenuItem Header="Quitter" Name="Close"/>
+            </MenuItem>
+            <MenuItem Header="Edition">
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="?" />
+                <MenuItem Header="A propos de" />
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

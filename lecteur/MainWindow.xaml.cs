@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace lecteur
 {
@@ -87,16 +88,22 @@ namespace lecteur
 
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            Debug.WriteLine(Close.Name);
+            if (Open.Name == "Open")
             {
-                mediaElement1.Source = new Uri(ofd.FileName);
-                mediaElement1.LoadedBehavior = MediaState.Manual;
-                mediaElement1.UnloadedBehavior = MediaState.Manual;
-                mediaElement1.Play();
+                ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
+                if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    mediaElement1.Source = new Uri(ofd.FileName);
+                    mediaElement1.LoadedBehavior = MediaState.Manual;
+                    mediaElement1.UnloadedBehavior = MediaState.Manual;
+                    mediaElement1.Play();
+                }
             }
         }
+
     }
 }
