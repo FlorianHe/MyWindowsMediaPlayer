@@ -37,3 +37,5 @@ C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\lecte
 C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.g.resources
 C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.Properties.Resources.resources
 C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.csproj.GenerateResource.Cache
+C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\Window1.baml
+C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\Window1.g.cs

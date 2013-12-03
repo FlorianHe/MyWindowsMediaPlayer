@@ -84,15 +84,18 @@ namespace lecteur
 
         private void mediaElement1_MediaOpened(object sender, RoutedEventArgs e)
         {
-            TimeSpan ts = mediaElement1.NaturalDuration.TimeSpan;
-            slider_seek.Maximum = ts.TotalSeconds;
-            timer.Start();
+            if (mediaElement1.NaturalDuration.HasTimeSpan == true)
+            {
+                TimeSpan ts = mediaElement1.NaturalDuration.TimeSpan;
+                slider_seek.Maximum = ts.TotalSeconds;
+                timer.Start();
+            }
 
         }
 
         private void Ouvrir(object sender, RoutedEventArgs e)
         {
-            ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
+            ofd.Filter = "All files (All)|*.avi;*.mwa;*.jpg;*.jpeg;*.png | Fichiers (AVI) |*.avi";
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 mediaElement1.Source = new Uri(ofd.FileName);
@@ -114,7 +117,7 @@ namespace lecteur
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            Window test = new Window();
+            Window1 test = new Window1();
             test.Show();
         }
 
