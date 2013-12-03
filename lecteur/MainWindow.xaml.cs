@@ -29,9 +29,11 @@ namespace lecteur
         public MainWindow()
         {
             InitializeComponent();
+           
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(500);
             timer.Tick += new EventHandler(timer_Tick);
+
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -88,21 +90,32 @@ namespace lecteur
 
         }
 
+        private void Ouvrir(object sender, RoutedEventArgs e)
+        {
+            ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                mediaElement1.Source = new Uri(ofd.FileName);
+                mediaElement1.LoadedBehavior = MediaState.Manual;
+                mediaElement1.UnloadedBehavior = MediaState.Manual;
+                mediaElement1.Play();
+            }
+        }
+
+        private void Quitter(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine(Close.Name);
-            if (Open.Name == "Open")
-            {
-                ofd.Filter = "Fichiers (AVI)|*.avi|Fichier (WMA) |*.wma|Fichier (WAV) |*.wav";
-                if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    mediaElement1.Source = new Uri(ofd.FileName);
-                    mediaElement1.LoadedBehavior = MediaState.Manual;
-                    mediaElement1.UnloadedBehavior = MediaState.Manual;
-                    mediaElement1.Play();
-                }
-            }
+
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window test = new Window();
+            test.Show();
         }
 
     }

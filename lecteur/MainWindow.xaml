@@ -16,15 +16,15 @@
         <Button Content="Pause" Margin="119,0,0,34.8" Click="Button_Click_1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
 
         <Menu VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
-            <MenuItem Header="File" Click="MenuItem_Click">
-                <MenuItem Header="Ouvrir" Name="Open"/>
-                <MenuItem Header="Quitter" Name="Close"/>
+            <MenuItem x:Name="File" Header="File" Click="MenuItem_Click">
+                <MenuItem Header="Ouvrir" Click="Ouvrir" />
+                <MenuItem Header="Quitter" Click="Quitter"/>
             </MenuItem>
             <MenuItem Header="Edition">
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="?" />
-                <MenuItem Header="A propos de" />
+                <MenuItem Header="A propos de" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>
     </Grid>
