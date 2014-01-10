@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Playlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <name>wlala</name>
+  <lsong>
+    <Song>
+      <name>chut</name>
+      <artist>marcha</artist>
+      <genre>rap</genre>
+      <chemin>test</chemin>
+    </Song>
+    <Song>
+      <name>chutt</name>
+      <artist>marchaa</artist>
+      <genre>raap</genre>
+      <chemin>teest</chemin>
+    </Song>
+  </lsong>
+</Playlist>

@@ -8,7 +8,7 @@
             <ColumnDefinition Width="10*"/>
             <ColumnDefinition Width="55*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement x:Name="mediaElement1" Margin="0,35,5.6,85.8" Grid.ColumnSpan="3" MediaOpened="mediaElement1_MediaOpened"/>
+        <MediaElement x:Name="mediaElement1" Margin="108,35,5.6,85.8" Grid.ColumnSpan="3" MediaOpened="mediaElement1_MediaOpened"/>
         <Button Content="Play" Margin="26,0,0,34.8" VerticalAlignment="Bottom" Click="Button_Click" HorizontalAlignment="Left" Width="75"/>
         <Button Content="Stop" Margin="218,0,0,34.8" Click="Button_Click_2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
         <Slider Margin="10,0,10,9.8" Name="slider_seek" Grid.ColumnSpan="3" ValueChanged="slider_seek_ValueChanged" RenderTransformOrigin="0.498,0.777" Height="20" VerticalAlignment="Bottom"/>
@@ -27,5 +27,10 @@
                 <MenuItem Header="A propos de" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>
+        <ListBox x:Name="playlist" HorizontalAlignment="Left" Height="100" Margin="3,66,0,0" VerticalAlignment="Top" Width="100" Background="#FF5A4646">
+            <ListBoxItem x:Name="retest" Content="retest"/>
+            <ListBoxItem x:Name="test" Content="test" MouseDoubleClick="test_MouseDoubleClick" FontFamily="NSimSun" Foreground="#FF9EB400" Background="#FF5A4646"/>
+            <ListBoxItem x:Name="createpl" Content="create playlist" MouseDoubleClick="createpl_MouseDoubleClick"/>
+        </ListBox>
     </Grid>
 </Window>

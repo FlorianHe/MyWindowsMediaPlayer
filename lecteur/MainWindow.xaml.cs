@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace lecteur
 {
@@ -45,7 +48,10 @@ namespace lecteur
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (mediaElement1.Source != null)
+            {
+                mediaElement1.Visibility = System.Windows.Visibility.Visible;
                 mediaElement1.Play();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -95,7 +101,7 @@ namespace lecteur
 
         private void Ouvrir(object sender, RoutedEventArgs e)
         {
-            ofd.Filter = "All files (All)|*.avi;*.mwa;*.jpg;*.jpeg;*.png | Fichiers (AVI) |*.avi";
+            ofd.Filter = "MP4 (*.mp4)|*.mp4|MP3's (*.mp3)|*.mp3|AVI (*.avi)|*.avi|All files (*.*)|*.*";
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 mediaElement1.Source = new Uri(ofd.FileName);
@@ -121,5 +127,40 @@ namespace lecteur
             test.Show();
         }
 
+
+        private void test_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            mediaElement1.Width = 200;
+            mediaElement1.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
+            mediaElement1.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+        }
+
+        private void createpl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Song w = new Song("chut", "marcha", "rap", "test");
+            Song x = new Song("chutt", "marchaa", "raap", "teest");
+            Console.WriteLine(w.name);
+            Playlist p = new Playlist();
+            p.setname("wlala");
+            p.addsong(w);
+            p.addsong(x);
+
+            System.IO.FileStream fs = System.IO.File.Create("../../test.xml");
+            fs.Close();
+
+            XmlSerializer xs = new XmlSerializer(typeof(Playlist));
+            using (StreamWriter wr = new StreamWriter("../../test.xml"))
+            {
+                xs.Serialize(wr, p);
+            }
+            
+            Playlist g = new Playlist();
+            XmlSerializer ps = new XmlSerializer(typeof(Playlist));
+            using (StreamReader rd = new StreamReader("../../test.xml"))
+            {
+                g = ps.Deserialize(rd) as Playlist;
+                Console.WriteLine(g.name);
+            }
+        }
     }
 }
