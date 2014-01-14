@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("fullscreen5.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("suivant5.png")]
 
 

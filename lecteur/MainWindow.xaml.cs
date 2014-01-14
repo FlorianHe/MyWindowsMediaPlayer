@@ -53,6 +53,7 @@ namespace lecteur
             string rep = Environment.CurrentDirectory;
             rep += "\\..\\..\\Icones\\";
             this.Background = new ImageBrush(new BitmapImage(new Uri(rep + "Fond_basic2.jpg")));
+            mediaElement1.Source = new Uri(rep + "Note_musique1.jpg");
 
             //Affichage des playlists
             refreshlist();
@@ -251,6 +252,7 @@ namespace lecteur
                 titleplay.Content = value.name;
                 titleplay.Visibility = System.Windows.Visibility.Visible;
                 saveplay.Visibility = System.Windows.Visibility.Visible;
+                fondlabel.Visibility = System.Windows.Visibility.Visible;
 
                 ObservableCollection<Playlist> myplay = new ObservableCollection<Playlist>();
                 XmlSerializer ps = new XmlSerializer(typeof(ObservableCollection<Playlist>));
@@ -370,6 +372,17 @@ namespace lecteur
             gsong.Add(nesong);
         }
 
+        //Drop ds le mediaelement
+        private void mediaElement1_Drop(object sender, System.Windows.DragEventArgs e)
+        {
+            string chem = (string)((System.Windows.DataObject)e.Data).GetFileDropList()[0];
+            mediaElement1.Source = new Uri(chem);
+            mediaElement1.LoadedBehavior = MediaState.Manual;
+            mediaElement1.UnloadedBehavior = MediaState.Manual;
+            mediaElement1.Volume = (double)slider_vol.Value;
+            mediaElement1.Play();
+        }
+
         //Sauvegarde de la playlist
         private void saveplay_Click(object sender, RoutedEventArgs e)
         {
@@ -404,6 +417,7 @@ namespace lecteur
             songlist.Visibility = System.Windows.Visibility.Hidden;
             titleplay.Visibility = System.Windows.Visibility.Hidden;
             saveplay.Visibility = System.Windows.Visibility.Hidden;
+            fondlabel.Visibility = System.Windows.Visibility.Hidden;
 
             mediaElement1.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
             mediaElement1.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
@@ -422,6 +436,8 @@ namespace lecteur
             Creer.Content = null;
             saveplay.Content = null;
             screenfull.Content = null;
+            Prev.Content = null;
+            Next.Content = null;
             string rep = Environment.CurrentDirectory;
             rep += "\\..\\..\\Icones\\";
             return rep;
@@ -437,6 +453,8 @@ namespace lecteur
             Creer.Background = new ImageBrush(new BitmapImage(new Uri(rep + "creer" + nb + ".png")));
             saveplay.Background = new ImageBrush(new BitmapImage(new Uri(rep + "save" + nb + ".png")));
             screenfull.Background = new ImageBrush(new BitmapImage(new Uri(rep + "fullscreen" + nb + ".png")));
+            Prev.Background = new ImageBrush(new BitmapImage(new Uri(rep + "precedent" + nb + ".png")));
+            Next.Background = new ImageBrush(new BitmapImage(new Uri(rep + "suivant" + nb + ".png")));
         }
         private void ColorDefault(object sender, RoutedEventArgs e)
         {

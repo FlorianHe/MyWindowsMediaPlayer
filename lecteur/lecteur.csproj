@@ -140,6 +140,15 @@
   <ItemGroup>
     <Resource Include="fullscreen5.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="precedent5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="suivant5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

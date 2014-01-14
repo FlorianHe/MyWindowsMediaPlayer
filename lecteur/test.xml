@@ -15,6 +15,10 @@
         <name>10. Asbestos</name>
         <chemin>C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\Musiques\10. Asbestos.mp3</chemin>
       </Song>
+      <Song>
+        <name>05. Lili</name>
+        <chemin>C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\Musiques\05. Lili.mp3</chemin>
+      </Song>
     </LSongs>
   </Playlist>
 </ArrayOfPlaylist>
