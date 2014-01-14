@@ -42,3 +42,26 @@ C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\Windo
 =======
 C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.csprojResolveAssemblyReference.cache
 >>>>>>> début de playlist
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\bin\Debug\lecteur.exe.config
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.exe
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.pdb
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\bin\Debug\lecteur.exe
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\bin\Debug\lecteur.pdb
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.csprojResolveAssemblyReference.cache
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\MainWindow.baml
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Window1.baml
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\MainWindow.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Window1.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\App.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur_MarkupCompile.cache
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.g.resources
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.Properties.Resources.resources
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur.csproj.GenerateResource.Cache
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\lecteur_MarkupCompile.lref
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Crplay.baml
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Crplay.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Window2.baml
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\Window2.g.cs
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\ErreurFile.baml
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\ErreurFile.g.cs

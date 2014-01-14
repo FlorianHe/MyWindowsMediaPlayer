@@ -4,21 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\obj\Debug\
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\obj\Debug\
 lecteur
 none
 false
 DEBUG;TRACE
-C:\Users\Guillaume\Documents\GitHub\MyWindowsMediaPlayer\lecteur\App.xaml
-2462529049
+C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\App.xaml
+31198291796
 
-<<<<<<< HEAD
-10-1264243185
-=======
-121792652557
->>>>>>> début de playlist
-15251461121
-MainWindow.xaml;Window1.xaml;
+13-1238215513
+16-1163101580
+ErreurFile.xaml;MainWindow.xaml;Window1.xaml;
 
-False
+True
 

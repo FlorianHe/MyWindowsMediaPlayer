@@ -1,36 +1,89 @@
-﻿<Window x:Class="lecteur.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="514.776" Width="736.344" AllowDrop="True" Drop="Window_Drop" MinWidth="525" MinHeight="350" Background="Black">
+        xmlns:local="clr-namespace:lecteur" x:Class="lecteur.MainWindow"
+        Title="MainWindow" Height="514.776" Width="736.344" AllowDrop="True" MinWidth="525" MinHeight="350" Background="Black">
     <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="194*"/>
-            <ColumnDefinition Width="10*"/>
-            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="364*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <MediaElement x:Name="mediaElement1" Margin="108,35,5.6,85.8" Grid.ColumnSpan="3" MediaOpened="mediaElement1_MediaOpened"/>
-        <Button Content="Play" Margin="26,0,0,34.8" VerticalAlignment="Bottom" Click="Button_Click" HorizontalAlignment="Left" Width="75"/>
-        <Button Content="Stop" Margin="218,0,0,34.8" Click="Button_Click_2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
-        <Slider Margin="10,0,10,9.8" Name="slider_seek" Grid.ColumnSpan="3" ValueChanged="slider_seek_ValueChanged" RenderTransformOrigin="0.498,0.777" Height="20" VerticalAlignment="Bottom"/>
-        <Slider Margin="0,0,36.4,34.8" Name="slider_vol" Maximum="1" Grid.Column="1" Value="1" ValueChanged="slider_vol_ValueChanged" Grid.ColumnSpan="2" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94"/>
-        <Button Content="Pause" Margin="119,0,0,34.8" Click="Button_Click_1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75"/>
+        <MediaElement x:Name="mediaElement1" Margin="108,35,4,85.8" MediaOpened="mediaElement1_MediaOpened" MouseEnter="mediaElement1_MouseEnter" MouseDown="mediaElement1_MouseDown"/>
+        <Button x:Name="Play" Margin="26,0,0,34.8" VerticalAlignment="Bottom" Click="Button_Click" HorizontalAlignment="Left" Width="49" Height="42" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
+            <Image Height="42" Source="play5.png" Stretch="Fill" Width="49"/>
+        </Button>
+        <Button x:Name="Stop" Margin="139,0,0,34.8" Click="Button_Click_2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="52" Height="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Height="42" Source="stop5.png" Stretch="Fill" Width="52"/>
+        </Button>
+        <Slider Margin="10,0,8,9.8" x:Name="slider_seek" Thumb.DragStarted="seekBar_DragStarted" Thumb.DragCompleted="seekBar_DragCompleted" RenderTransformOrigin="0.498,0.777" Height="20" VerticalAlignment="Bottom"/>
+        <Slider Margin="0,0,35,34.8" x:Name="slider_vol" Maximum="1" Value="1" ValueChanged="slider_vol_ValueChanged" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="94"/>
+        <Button x:Name="Pause" Margin="80,0,0,34.8" Click="Button_Click_1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="56" Height="42" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Height="42" Source="pause5.png" Stretch="Fill" Width="49"/>
+        </Button>
 
         <Menu VerticalAlignment="Top" Height="20" Grid.ColumnSpan="3" Margin="0,0,-0.4,0">
             <MenuItem x:Name="File" Header="Média" Click="MenuItem_Click">
                 <MenuItem Header="Ouvrir" Click="Ouvrir" />
+                <MenuItem Header="Créer Playlist" Click="Create_playlist" HorizontalAlignment="Left" Width="139.2"/>
                 <MenuItem Header="Quitter" Click="Quitter"/>
             </MenuItem>
-            <MenuItem Header="Edition">
+            <MenuItem Header="Thèmes" Click="MenuItem_Click_2">
+                <MenuItem Header="Defaut" HorizontalAlignment="Left" Width="139.2" Click="ColorDefault"/>
+                <MenuItem Header="Ocean" HorizontalAlignment="Left" Width="139.2" Click="ColorOcean"/>
+                <MenuItem Header="Pigeon" HorizontalAlignment="Left" Width="139.2" Click="ColorPigeon"/>
+                <MenuItem Header="Ciel" HorizontalAlignment="Left" Width="139.2" Click="ColorCiel"/>
+                <MenuItem Header="Nuit" HorizontalAlignment="Left" Width="139.2" Click="ColorNuit"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="?" />
                 <MenuItem Header="A propos de" Click="MenuItem_Click_1" />
             </MenuItem>
         </Menu>
-        <ListBox x:Name="playlist" HorizontalAlignment="Left" Height="100" Margin="3,66,0,0" VerticalAlignment="Top" Width="100" Background="#FF5A4646">
-            <ListBoxItem x:Name="retest" Content="retest"/>
-            <ListBoxItem x:Name="test" Content="test" MouseDoubleClick="test_MouseDoubleClick" FontFamily="NSimSun" Foreground="#FF9EB400" Background="#FF5A4646"/>
-            <ListBoxItem x:Name="createpl" Content="create playlist" MouseDoubleClick="createpl_MouseDoubleClick"/>
+        <ListBox ItemsSource="{Binding Path=Playlists}" x:Name="mylist" HorizontalAlignment="Left" Margin="3,90,0,174.8" Width="100" Background="#FF5A4646" SelectionChanged="mylist_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding getname}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
+        <ListBox ItemsSource="{Binding Path=Songs}" x:Name="songlist" HorizontalAlignment="Left" Height="261" Margin="108,25,0,0" VerticalAlignment="Top" Width="383" Visibility="Hidden" MouseDoubleClick="songlist_MouseDoubleClick" Drop="songlist_Drop">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding getnam}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBox x:Name="crtext" HorizontalAlignment="Left" Height="25" Margin="3,25,0,0" TextWrapping="Wrap" Text="Newplaylist" VerticalAlignment="Top" Width="98" Visibility="Hidden"/>
+        <Button x:Name="Creer" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="91" Click="Creer_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="40" Visibility="Hidden">
+            <Image Height="34" Source="Creer5.png" Stretch="Fill" Width="68"/>
+        </Button>
+        <Button x:Name="saveplay" Grid.Column="2" HorizontalAlignment="Left" Margin="24.4,57,-64.4,0" VerticalAlignment="Top" Width="40" Click="saveplay_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="37" Visibility="Hidden">
+            <Image Height="37" Source="save5.png" Stretch="Fill" Width="40"/>
+        </Button>
+        <Label x:Name="titleplay" Content="Label" HorizontalAlignment="Left" Margin="546,25,0,0" VerticalAlignment="Top" Height="25" Width="133" Background="#FFE71111" Visibility="Hidden"/>
+        <Button x:Name="muet" HorizontalAlignment="Right" Margin="0,0,134,28.8" Width="49" Click="muet_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="42" VerticalAlignment="Bottom" Visibility="Hidden">
+            <Image Height="42" Source="son_off5.png" Stretch="Fill" Width="49"/>
+        </Button>
+        <Button x:Name="resetvol" Margin="0,0,137,31.8" Click="resetvol_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="44" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="48">
+            <Image Height="42" Source="son_on5.png" Stretch="Fill" Width="49" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Button>
+        <Button x:Name="screenfull" Margin="0,0,197,31.8" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="screenfull_Click" Height="42" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="49">
+            <Image Height="42" Source="fullscreen5.png" Stretch="Fill" Width="49"/>
+        </Button>
+        <Button x:Name="Prev" Content="Prev" HorizontalAlignment="Left" Margin="209,418,0,0" VerticalAlignment="Top" Width="75" Click="Prev_Click"/>
+        <Button x:Name="Next" Content="Next" HorizontalAlignment="Left" Margin="314,418,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click"/>
     </Grid>
 </Window>

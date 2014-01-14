@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Playlist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <name>wlala</name>
-  <lsong>
-    <Song>
-      <name>chut</name>
-      <artist>marcha</artist>
-      <genre>rap</genre>
-      <chemin>test</chemin>
-    </Song>
-    <Song>
-      <name>chutt</name>
-      <artist>marchaa</artist>
-      <genre>raap</genre>
-      <chemin>teest</chemin>
-    </Song>
-  </lsong>
-</Playlist>
+<ArrayOfPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Playlist>
+    <name>test</name>
+    <LSongs>
+      <Song>
+        <name>04. L'amour c'est pas pour les peureux</name>
+        <chemin>C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\Musiques\04. L'amour c'est pas pour les peureux.mp3</chemin>
+      </Song>
+      <Song>
+        <name>06. Loin</name>
+        <chemin>C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\Musiques\06. Loin.mp3</chemin>
+      </Song>
+      <Song>
+        <name>10. Asbestos</name>
+        <chemin>C:\Users\Guillaume\Desktop\MyWindowsMediaPlayer\lecteur\Musiques\10. Asbestos.mp3</chemin>
+      </Song>
+    </LSongs>
+  </Playlist>
+</ArrayOfPlaylist>

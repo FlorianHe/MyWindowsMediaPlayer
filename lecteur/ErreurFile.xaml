@@ -1,0 +1,9 @@
+﻿<Window x:Class="lecteur.ErreurFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ErreurFile" Height="120.415" Width="247.059" Background="#FFD30B0B">
+    <Grid Margin="0,0,14.6,179.4">
+        <Label Content="Fichier Introuvable" HorizontalAlignment="Left" Height="37" Margin="33,23,0,-60" VerticalAlignment="Top" Width="176" FontSize="20"/>
+
+    </Grid>
+</Window>
